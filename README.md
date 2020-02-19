@@ -2,7 +2,7 @@
 
 Idea from [here](https://github.com/florinpop17/app-ideas)
 
-**Demo**: ON CONSTRUCTION
+**Demo**: https://igooorz-bin2dec.netlify.com/
 
 **Tier:** 1-Beginner
 
