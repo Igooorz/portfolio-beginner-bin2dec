@@ -1,10 +1,20 @@
 <template>
-  <div>
-    <h1>Binary to Decimal Converter</h1>
-    <input class="mb-3 mr-2" type="text" id="binary" v-model="binaryString">
-    <button class="btn btn-outline-danger btn-sm" @click="resetBinaryString"><i class="fas fa-undo"></i></button>
-    <p v-if="validBinary">Decimal Value: <strong>{{decimalString}}</strong></p>
-    <p v-else class="alert alert-danger">Input content is not a binary</p>
+  <div class="container form-group">
+    <div class="form-row">
+      <h1 class="title mt-5">Binary to Decimal Converter</h1>
+    </div>
+    <div class="form-row mt-3">
+      <div class="col-11">
+        <input class="mb-3 mr-2 form-control" type="text" id="binary" v-model="binaryString">
+      </div>
+      <div class="col-1">
+        <button class="btn btn-outline-danger btn-sm" @click="resetBinaryString"><i class="fas fa-undo"></i></button>
+      </div>
+    </div>
+    <div class="form-row mt-2">
+      <p v-if="validBinary" class="col-12">Decimal Value: <strong>{{decimalString}}</strong></p>
+      <p v-else class="alert alert-danger col-12 text-center">Input content is not a binary</p>
+    </div>
   </div>
 </template>
 
@@ -18,7 +28,7 @@ export default {
   },
   watch: {
     binaryString: function(newBin) {
-      if (newBin.match(/^[0-1]+$/g) === null || newBin == '') {
+      if (newBin.length !== 0 && newBin.match(/^[0-1]+$/g) === null) {
         this.validBinary = false
       } else {
         this.validBinary = true
@@ -44,3 +54,11 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+
+  .text-center {
+    text-align: center
+  }
+
+</style>
